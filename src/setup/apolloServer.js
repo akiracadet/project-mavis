@@ -20,7 +20,7 @@ export async function apolloServer(app) {
 
   // TAKE NOTE!
   // don't ever change the name of 'app' into something else
-  // for example change name of 'app' for 'expressApp'
+  // for example change name of 'app' to 'expressApp'
   // apollo-server generates an annoying error which is hard to debug
   server.applyMiddleware({app})
 
