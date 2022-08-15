@@ -9,10 +9,10 @@ export function expressApp() {
   app.use(helmet())
   app.use(cors())
 
-  app.get((req, res, next) => {
-    res.json(200).json({
+  app.get('/api', (req, res) => {
+    res.status(200).json({
       success: true,
-      message: 'Default endpoint, please replace and build additional endpoints',
+      message: 'Default endpoint, please build additional endpoints',
       data: {
         hello: 'hello, world!'
       }
@@ -20,7 +20,7 @@ export function expressApp() {
   })
 
   app.use((err, req, res, next) => {
-    res.json(500).json({
+    res.status(500).json({
       success: false,
       message: 'Default error middleware, please replace.'
     })
